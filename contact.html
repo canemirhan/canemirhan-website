@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Contact</title>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const initialTheme = theme === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", initialTheme);
+
+        const savedLang = localStorage.getItem("language") || "en";
+        document.documentElement.setAttribute("data-lang", savedLang);
+
+        window.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll("[data-tr]").forEach((el) => {
+            el.textContent = el.dataset[savedLang];
+          });
+          document.documentElement.classList.add("lang-loaded");
+        });
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" style="text-decoration: none; color: inherit"
+        ><h2>Emirhan Can</h2></a
+      >
+      <div class="nav-links">
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">Home</a>
+        <a href="about.html" data-en="About" data-tr="Hakkımda">About</a>
+        <a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+      </div>
+
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <div class="language-toggle">
+        <button id="lang-tr">TR</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+      </div>
+    </nav>
+
+    <hr class="nav-divider" />
+
+    <main class="page-content">
+      <section class="page">
+        <div class="contact-links-only">
+          <div class="social-media">
+            <h2 data-en="Links" data-tr="Bağlantılar">Links</h2>
+            <ul>
+              <li>
+                <a
+                  href="https://www.linkedin.com/in/emirhan-can/"
+                  target="_blank"
+                >
+                  <img
+                    src="static/images/icons/linkedin.png"
+                    alt="LinkedIn"
+                    class="social-icon"
+                  />
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/canemirhan" target="_blank">
+                  <img
+                    src="static/images/icons/github.png"
+                    alt="GitHub"
+                    class="social-icon"
+                  />
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://stackoverflow.com/users/19494950/canemirhan"
+                  target="_blank"
+                >
+                  <img
+                    src="static/images/icons/stackoverflow.png"
+                    alt="Stack Overflow"
+                    class="social-icon"
+                  />
+                  Stack Overflow
+                </a>
+              </li>
+              <li>
+                <a href="https://www.kaggle.com/emirhancan" target="_blank">
+                  <img
+                    src="static/images/icons/kaggle.png"
+                    alt="Kaggle"
+                    class="social-icon"
+                  />
+                  Kaggle
+                </a>
+              </li>
+              <li>
+                <a href="https://leetcode.com/u/cannemirhann/" target="_blank">
+                  <img
+                    src="static/images/icons/leetcode.png"
+                    alt="LeetCode"
+                    class="social-icon"
+                  />
+                  LeetCode
+                </a>
+              </li>
+              <li>
+                <a href="mailto:emirhan@canemirhan.com">
+                  <img
+                    src="static/images/icons/emailicon.png"
+                    alt="Email"
+                    class="social-icon"
+                  />
+                  emirhan@canemirhan.com
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-download">
+            <h2 data-en="Download CV" data-tr="CV İndir">Download CV</h2>
+            <ul>
+              <li>
+                <a
+                  href="static/files/emirhancan_cv_eng.pdf"
+                  download
+                  class="cv-attachment"
+                >
+                  <span data-en="CV (English)" data-tr="CV (İngilizce)"
+                    >CV (English)</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="static/files/emirhancan_cv_tr.pdf"
+                  download
+                  class="cv-attachment"
+                >
+                  <span data-en="CV (Turkish)" data-tr="CV (Türkçe)"
+                    >CV (Turkish)</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="copyright">
+      <p
+        data-en="© 2026 canemirhan.com. All rights reserved."
+        data-tr="© 2026 canemirhan.com. Tüm hakları saklıdır."
+      >
+        © 2026 canemirhan.com. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/language.js"></script>
+    <script src="static/js/navigation.js"></script>
+  </body>
+</html>

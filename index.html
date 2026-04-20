@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Home</title>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const initialTheme = theme === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", initialTheme);
+
+        const savedLang = localStorage.getItem("language") || "en";
+        document.documentElement.setAttribute("data-lang", savedLang);
+
+        window.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll("[data-tr]").forEach((el) => {
+            el.textContent = el.dataset[savedLang];
+          });
+          document.documentElement.classList.add("lang-loaded");
+        });
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" style="text-decoration: none; color: inherit"
+        ><h2>Emirhan Can</h2></a
+      >
+      <div class="nav-links">
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">Home</a>
+        <a href="about.html" data-en="About" data-tr="Hakkımda">About</a>
+        <a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+      </div>
+
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <div class="language-toggle">
+        <button id="lang-tr">TR</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+      </div>
+    </nav>
+
+    <hr class="nav-divider" />
+
+    <main class="page-content">
+      <section class="hero">
+        <div class="hero-text">
+          <h1 data-tr="Emirhan Can" data-en="Emirhan Can">Emirhan Can</h1>
+
+          <p
+            data-tr="Bilgisayar Mühendisliği Öğrencisi"
+            data-en="Computer Engineering Student"
+          >
+            Computer Engineering Student
+          </p>
+        </div>
+
+        <div class="hero-images">
+          <div class="hero-image">
+            <img
+              src="static/images/photo2.jpg"
+              alt="Emirhan profile photo"
+              class="hero-photo"
+            />
+          </div>
+          <div class="hero-image">
+            <img
+              src="static/images/photo.jpg"
+              alt="Emirhan second profile photo"
+              class="hero-photo"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="copyright">
+      <p
+        data-en="© 2026 canemirhan.com. All rights reserved."
+        data-tr="© 2026 canemirhan.com. Tüm hakları saklıdır."
+      >
+        © 2026 canemirhan.com. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/language.js"></script>
+    <script src="static/js/navigation.js"></script>
+  </body>
+</html>

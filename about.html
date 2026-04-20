@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Emirhan Can | About</title>
+
+    <script>
+      (function () {
+        const theme = localStorage.getItem("theme");
+        const initialTheme = theme === "dark" ? "dark" : "light";
+        document.documentElement.setAttribute("data-theme", initialTheme);
+
+        const savedLang = localStorage.getItem("language") || "en";
+        document.documentElement.setAttribute("data-lang", savedLang);
+
+        window.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll("[data-tr]").forEach((el) => {
+            el.textContent = el.dataset[savedLang];
+          });
+          document.documentElement.classList.add("lang-loaded");
+        });
+      })();
+    </script>
+    <link rel="icon" type="image/png" href="static/images/icons/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" style="text-decoration: none; color: inherit"
+        ><h2>Emirhan Can</h2></a
+      >
+      <div class="nav-links">
+        <a href="index.html" data-en="Home" data-tr="Ana Sayfa">Home</a>
+        <a href="about.html" data-en="About" data-tr="Hakkımda">About</a>
+        <a href="contact.html" data-en="Contact" data-tr="İletişim">Contact</a>
+      </div>
+
+      <button id="theme-toggle" aria-label="Toggle theme"></button>
+      <div class="language-toggle">
+        <button id="lang-tr">TR</button>
+        <span>|</span>
+        <button id="lang-en">EN</button>
+      </div>
+    </nav>
+
+    <hr class="nav-divider" />
+
+    <main class="page-content">
+      <section class="about">
+        <div class="about-content">
+          <h1 data-en="About Me" data-tr="Hakkımda">About Me</h1>
+          <p
+            class="about-text"
+            data-en="Hi, I am Emirhan Can. I was born in January 2003 in Kucukcekmece, Istanbul. I have spent half of my life in Istanbul and the other half in Bursa. I completed primary school and the first half of middle school in Istanbul, while I completed the second half of middle school and high school in Bursa. I am currently back in Istanbul for my university education. I am pursuing my education in the Computer Engineering department at Marmara University."
+            data-tr="Merhaba, ben Emirhan Can. 2003 Ocak doğumluyum. İstanbul, Küçükçekmece'de dünyaya geldim. Yaşantımın yarısı İstanbul'da, yarısı da Bursa'da geçti, geçmeye de devam ediyor. İlkokul ve ortaokulun ilk yarısını İstanbul'da, ortaokulun diğer yarısı ve liseyi de Bursa'da okudum. Şu anda üniversite eğitimim için tekrar İstanbul'dayım. Marmara Üniversitesi, Bilgisayar Mühendisliği bölümünde öğrenimime devam ediyorum."
+          >
+            [Passage 1 Placeholder]
+          </p>
+          <p
+            class="about-text"
+            data-en="Because of my interest and curiosity in technology since childhood, I decided to study computer engineering. What motivates me most in this field is not only solving a problem but also having the opportunity to understand the logic and structure behind the solution. Whenever I learn something new, grasping the idea behind it and understanding where it comes from has always been important for me."
+            data-tr="Çocukluğumdan gelen teknolojiye olan ilgim ve merakım nedeniyle bilgisayar mühendisliğini tercih ettim.  Bu alanda beni en çok motive eden şey, bir problemi çözmenin yanı sıra o çözümün arkasındaki mantığı ve yapıyı anlayabilme fırsatı sunabilmesidir. Yeni bir bilgi öğrendiğimde, onun arkasındaki fikri kavramak ve nereden geldiğini öğrenmek benim için her zaman önemli olmuştur."
+          >
+            [Passage 2 Placeholder]
+          </p>
+          <p
+            class="about-text"
+            data-en="In addition to my university education, I have attended various bootcamps to further cultivate myself. At the same time, by utilizing online resources, I continue my self-learning process with a lifelong learning approach."
+            data-tr="Üniversite eğitimimin yanı sıra kendimi yetiştirmek için çeşitli eğitimlere katıldım. Aynı zamanda çevrimiçi kaynaklardan da faydalanarak yaşam boyu öğrenme anlayışıyla kendi kendime öğrenme sürecimi sürdürmeye devam ediyorum."
+          >
+            [Passage 3 Placeholder]
+          </p>
+          <p
+            class="about-text"
+            data-en="I had two voluntary internship experiences where I had the opportunity to apply the theoretical knowledge I had gained during this period into practice. Thanks to these experiences, I acquired the opportunity not only to improve my technical skills but also to closely observe the process of developing solutions to real-world problems."
+            data-tr="Bu süreçte edindiğim teorik bilgileri pratiğe dökme fırsatı bulduğum iki gönüllü staj deneyimim oldu. Bu deneyimler sayesinde hem teknik bilgilerimi geliştirme hem de gerçek dünya problemlerinee çözüm üretme sürecini yakından gözlemleme fırsatı elde ettim."
+          >
+            [Passage 4 Placeholder]
+          </p>
+          <p
+            class="about-text"
+            data-en="I am currently in the final stage of my university education, working on our capstone project with my friend. In this project, we are focusing on developing a lightweight and efficient machine learning accelerator by optimizing both hardware and software simultaneously."
+            data-tr="Şu anda üniversite eğitimimin son aşamasında arkadaşım ile beraber bitirme projemiz üzerinde çalışıyoruz. Bu projede donanım ve yazılımı eşzamanlı olarak optimize ederek hafif ve verimli bir makine öğrenimi hızlandırıcısı geliştirmeye odaklanıyoruz."
+          >
+            [Passage 5 Placeholder]
+          </p>
+          <p
+            class="about-text"
+            data-en="I desire to continue my career as an AI/ML Engineer and to progress in similar fields. My goal is to become an exemplary engineer who touches people’s lives. In line with my goals, I move forward with discipline and determination, working in order to create value and gain new perspectives."
+            data-tr="Kariyerime AI/ML Engineer olarak devam etmek ve buna benzer alanlarda ilerlemek istiyorum. İnsanlara dokunan ve örnek gösterilen bir mühendis olmayı hedefliyorum. Hedeflerim doğrultusunda disiplinli ve kararlı bir şekilde ilerliyor, değer yaratmak ve yeni perspektifler kazanmak için çalışıyorum."
+          >
+            [Passage 6 Placeholder]
+          </p>
+          <blockquote
+            class="about-quote"
+            style="font-style: italic"
+            data-en="It is not possible to eliminate errors completely, because you never acquire all the information necessary to construct a flawless forecasting equation. — Adam Fawer, Improbable"
+            data-tr="Söyleyeceklerim diğer olasılık metodolojisi için de geçerlidir, hiçbir şeyden tamamen emin olamazsın; o zaman tahmin yürütmek için kullanılan denklemler hataları en aza indirgemek içindir, hata payını ortadan kaldırmak için değil. — Adam Fawer, Olasılıksız"
+          >
+            [Quote Placeholder]
+          </blockquote>
+        </div>
+      </section>
+    </main>
+
+    <footer class="copyright">
+      <p
+        data-en="© 2026 canemirhan.com. All rights reserved."
+        data-tr="© 2026 canemirhan.com. Tüm hakları saklıdır."
+      >
+        © 2026 canemirhan.com. All rights reserved.
+      </p>
+    </footer>
+
+    <script src="static/js/theme.js"></script>
+    <script src="static/js/language.js"></script>
+    <script src="static/js/navigation.js"></script>
+  </body>
+</html>
