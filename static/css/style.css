@@ -211,11 +211,15 @@ body {
 }
 
 .contact-form {
-    max-width: 600px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    margin: 0 auto 60px auto;
+    margin: 25px 0 0;
+}
+
+.contact-form label {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .contact-form input,
@@ -226,6 +230,14 @@ body {
     font-size: 14px;
     background: var(--card-bg);
     color: var(--text-color);
+    font-family: inherit;
+    resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
 }
 
 .contact-form button {
@@ -243,24 +255,55 @@ body {
     opacity: 0.9;
 }
 
+.contact-form button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+}
+
+.form-status {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-status.success {
+    color: #16803c;
+}
+
+.form-status.error {
+    color: #c62828;
+}
+
 .contact-container {
-    display: flex;
-    gap: 60px;
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .contact-left {
-    flex: 1;
-    min-width: 300px;
+    min-width: 0;
 }
 
 .contact-right {
-    flex: 1;
-    min-width: 300px;
+    min-width: 0;
 }
 
-.contact-right > div {
-    margin-bottom: 40px;
+.contact-panel {
+    background: var(--card-bg);
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.contact-panel h2 {
+    margin-top: 0;
+}
+
+.contact-intro {
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 0;
 }
 
 .social-media ul {
@@ -357,16 +400,15 @@ body {
     margin-bottom: 12px;
 }
 
-.contact-links-only {
-    display: flex;
-    gap: 80px;
-    margin-top: 40px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+@media (max-width: 700px) {
+    .contact-container {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
 
-.contact-links-only > div {
-    min-width: 250px;
+    .contact-panel {
+        padding: 24px;
+    }
 }
 
 @media (max-width: 900px) {

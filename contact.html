@@ -52,30 +52,118 @@
 
     <main class="page-content">
       <section class="page">
-        <div class="contact-links-only">
-          <div class="social-media">
-            <h2 data-en="Links" data-tr="Bağlantılar">Links</h2>
+        <div class="contact-container">
+          <div class="contact-left contact-panel">
+            <h2 data-en="Contact Me" data-tr="Bana Ulaşın">Contact Me</h2>
+            <p
+              class="contact-intro"
+              data-en="Have a question or want to work together? Send me a message."
+              data-tr="Bir sorunuz mu var veya birlikte çalışmak mı istiyorsunuz? Bana bir mesaj gönderin."
+            >
+              Have a question or want to work together? Send me a message.
+            </p>
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xzedqgkz"
+              method="post"
+            >
+              <label for="name" data-en="Name" data-tr="İsim">Name</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                data-placeholder-en="Your name"
+                data-placeholder-tr="İsminiz"
+                placeholder="Your name"
+              />
+
+              <label for="email" data-en="Email" data-tr="E-posta">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                data-placeholder-en="your@email.com"
+                data-placeholder-tr="e-posta@adresiniz.com"
+                placeholder="your@email.com"
+              />
+
+              <label for="message" data-en="Message" data-tr="Mesaj">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                required
+                data-placeholder-en="Write your message here..."
+                data-placeholder-tr="Mesajınızı buraya yazın..."
+                placeholder="Write your message here..."
+              ></textarea>
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from canemirhan.com"
+              />
+
+              <button
+                type="submit"
+                data-en="Send Message"
+                data-tr="Mesaj Gönder"
+              >
+                Send Message
+              </button>
+              <p
+                class="form-status"
+                role="status"
+                aria-live="polite"
+                hidden
+                data-success-en="Thanks! Your message has been sent."
+                data-success-tr="Teşekkürler! Mesajınız gönderildi."
+                data-error-en="Sorry, your message could not be sent. Please try again."
+                data-error-tr="Üzgünüz, mesajınız gönderilemedi. Lütfen tekrar deneyin."
+              ></p>
+            </form>
+          </div>
+
+          <div class="contact-right contact-panel cv-download">
+            <h2 data-en="Download CV" data-tr="CV İndir">Download CV</h2>
             <ul>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/emirhan-can/"
-                  target="_blank"
+                  href="static/files/emirhancan_cv_eng.pdf"
+                  download
+                  class="cv-attachment"
                 >
-                  <img
-                    src="static/images/icons/linkedin.png"
-                    alt="LinkedIn"
-                    class="social-icon"
-                  />
+                  <span data-en="CV (English)" data-tr="CV (İngilizce)"
+                    >CV (English)</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="static/files/emirhancan_cv_tr.pdf"
+                  download
+                  class="cv-attachment"
+                >
+                  <span data-en="CV (Turkish)" data-tr="CV (Türkçe)"
+                    >CV (Turkish)</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="contact-panel social-media">
+            <h2 data-en="Links" data-tr="Bağlantılar">Links</h2>
+            <ul>
+              <li>
+                <a href="https://www.linkedin.com/in/emirhan-can/" target="_blank">
+                  <img src="static/images/icons/linkedin.png" alt="LinkedIn" class="social-icon" />
                   LinkedIn
                 </a>
               </li>
               <li>
                 <a href="https://github.com/canemirhan" target="_blank">
-                  <img
-                    src="static/images/icons/github.png"
-                    alt="GitHub"
-                    class="social-icon"
-                  />
+                  <img src="static/images/icons/github.png" alt="GitHub" class="social-icon" />
                   GitHub
                 </a>
               </li>
@@ -124,34 +212,6 @@
               </li>
             </ul>
           </div>
-
-          <div class="cv-download">
-            <h2 data-en="Download CV" data-tr="CV İndir">Download CV</h2>
-            <ul>
-              <li>
-                <a
-                  href="static/files/emirhancan_cv_eng.pdf"
-                  download
-                  class="cv-attachment"
-                >
-                  <span data-en="CV (English)" data-tr="CV (İngilizce)"
-                    >CV (English)</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
-                  href="static/files/emirhancan_cv_tr.pdf"
-                  download
-                  class="cv-attachment"
-                >
-                  <span data-en="CV (Turkish)" data-tr="CV (Türkçe)"
-                    >CV (Turkish)</span
-                  >
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </section>
     </main>
@@ -167,6 +227,7 @@
 
     <script src="static/js/theme.js"></script>
     <script src="static/js/language.js"></script>
+    <script src="static/js/contact.js"></script>
     <script src="static/js/navigation.js"></script>
   </body>
 </html>

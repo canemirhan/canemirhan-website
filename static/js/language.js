@@ -44,7 +44,7 @@ function setLanguage(lang) {
 
     // Update form input placeholders
     document.querySelectorAll("[data-placeholder-en]").forEach(el => {
-        el.placeholder = el.dataset[`placeholder-${lang}`];
+        el.placeholder = el.getAttribute(`data-placeholder-${lang}`) || "";
     });
 
     document.documentElement.setAttribute("data-lang", lang);
